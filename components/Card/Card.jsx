@@ -10,6 +10,10 @@ const Card = (props) => {
   const [dropdown, setDropdown] = useState(false);
   const [modalShow, setModalShow] = useState(false);
 
+  const handlePriceInputChange = (event) => {
+    props.updateCard(props.id, parseFloat(event.target.value));
+  }
+
   return (
     <Draggable
       key={props.id.toString()}
@@ -51,6 +55,10 @@ const Card = (props) => {
               {props.tags?.map((item, index) => (
                 <Tag key={index} tagName={item.tagName} color={item.color} />
               ))}
+            </div>
+
+            <div className="card__price">
+              {props.card.price?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2, style: 'currency', currency: 'SEK' }) || "0.00"}  
             </div>
 
             <div className="card__footer">

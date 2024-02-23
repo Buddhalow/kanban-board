@@ -89,6 +89,13 @@ export default function Board(props) {
           </div>
         )}
       </Droppable>
+      <div className="board__sum">
+        <p>
+          {(props.card?.reduce((acc, item) => {
+            return acc + item.price;
+          }, 0) || 0).toLocaleString(undefined, { maximumFractionDigits: 2, minimumFractionDigits: 2, style: 'currency', currency: 'SEK' })}
+        </p>
+      </div>
       <div className="board__footer">
         <Editable
           name={"Add Card"}

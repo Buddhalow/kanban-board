@@ -241,6 +241,18 @@ export default function CardDetails(props) {
               </div>
             </div>
             <div className="col-4">
+              <h6>Price</h6>
+              <div className="d-flex gap-2">
+                <input
+                  type="number"
+                  defaultValue={values.price}
+                  onChange={(e) => {
+                    setValues({ ...values, price: parseFloat(e.target.value) });
+                  }}
+                />
+              </div>
+            </div>
+            <div className="col-4">
               <h6>Add to card</h6>
               <div className="d-flex card__action__btn flex-column gap-2">
                 <button onClick={() => setLabelShow(true)}>

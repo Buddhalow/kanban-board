@@ -25,6 +25,9 @@
   align-items: center;
   gap: 5px;
 }
+.card__price {
+  text-align: right;
+}
 .card__action__btn > button:hover {
   background-color: var(--task-hover);
   border: none;

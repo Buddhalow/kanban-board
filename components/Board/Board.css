@@ -12,9 +12,13 @@
   max-height: 82vh;
   color: var(--text-color);
 }
-.board__footer {
+.board__footer, .board__sum {
   display: flex;
   flex-direction: column;
+  padding: 0rem 1.1rem;
+}
+.board__sum {
+  text-align: right;
 }
 .board__cards {
   padding: 0.5rem 0.5rem;
